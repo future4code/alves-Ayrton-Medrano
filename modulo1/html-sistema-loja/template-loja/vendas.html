@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+  <head>
     <body style="background-color:#EDFFFF"></body>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,15 +23,22 @@
     </div>
     </div> 
     </header>
-    
-    <h2>Funcionários</h2>
-    <!-- Crie uma lista de funcionários usando as tags que você aprendeu hoje abaixo \/ -->
-    <ul>
-        <li>Ayrton</li> 
-        <li>João</li>
-        <li>Maria</li>
-        <li>Margarida</li>
-    </ul>
-       
+    <form action="#">
+      <label for="item-venda">Item Vendido: </label>
+      <input type="url" id="item-venda" name="item-vendido">
+      <br>
+      <label for="quantidade">Quantidade: </label>
+      <input type="number" id="quantidade" name="quantidadeItens">
+      <br>
+      <label for="preco">Preço (em R$): </label>
+         <input type="number" id="preco" name="preco">
+      <br>
+      <label for="pagamento">Forma de pagamento: </label>
+         <input type="text" id="pagamento" name="formaPagamento">
+      <br>
+          <button type="submit">Adicionar</button>
+
+</form>
+  
 </body>
 </html>
