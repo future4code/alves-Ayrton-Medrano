@@ -1,0 +1,187 @@
+/* GERAL */
+
+*>p{
+  font-size: 18px;
+  font-family: helvetica;
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+/* HEADER */
+
+}
+#logo {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+}
+
+#foto {
+  max-width: 300px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#title-home {
+
+text-align: center;
+}
+.cabecalho {
+  border-bottom: 2px black solid;
+  border-top: 0px black solid;
+  border-left: 0px black solid;
+  border-right: 0px black solid;
+}
+.botoes {
+text-align: center;
+
+}
+.botao0 {
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+  }
+  .botao0:hover {
+    background-color:black;
+    color: white
+  }
+
+.botao1 {
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+  }
+  .botao1:hover {
+    background-color:black;
+    color: white
+  }
+
+.botao2 {
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+}
+.botao2:hover {
+  background-color:black;
+  color: white
+}
+.botao3 {
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+  }
+  .botao3:hover {
+    background-color:black;
+    color: white
+  }
+.botao4 {
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+}
+.botao4:hover {
+  background-color:black;
+  color: white
+}
+.botao5 {
+  background-color: white;
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 15px;
+  color: black;
+  }  
+  .botao5:hover {
+    background-color:black;
+    color: white
+  }
+
+/* PAGINA EXPERIENCIA */
+#labenu {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  /* position: absolute;
+  left: 0; */
+  display: inline;
+
+}
+.labenu-text{
+  display: inline;
+  font-size: 18px;
+  font-family: helvetica;
+  text-align: justify;
+}
+.cv{
+  text-align: center;
+  font-size: 32px;
+  font-family: helvetica;
+  
+}
+#unicid {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  /* position: absolute;
+  left: 0; */
+  display: inline;
+
+}
+#gru {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  /* position: absolute;
+  left: 0; */
+  display: inline;
+
+}
+#bk {
+  max-width: 100px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  /* position: absolute;
+  left: 0; */
+  display: inline;
+
+}
+.text-cv{
+  font: size 18px;
+  font-family: helvetica;
+  text-align: justify;
+}
+.form{
+  font-size: 18px;
+  font-family: helvetica;
+  text-align: justify;
+}
