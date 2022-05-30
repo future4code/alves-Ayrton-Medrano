@@ -179,9 +179,16 @@ text-align: center;
   font: size 18px;
   font-family: helvetica;
   text-align: justify;
+  
 }
 .form{
   font-size: 18px;
   font-family: helvetica;
   text-align: justify;
+}
+.container{
+  font: size 18px;
+  font-family: helvetica;
+  text-align: justify;
+  
 }
