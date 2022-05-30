@@ -192,3 +192,9 @@ text-align: center;
   text-align: justify;
   
 }
+.img-sites{
+  max-width: 600px;
+  max-height: 600px;
+  width: auto;
+  height: auto;
+}
