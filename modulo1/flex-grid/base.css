@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+}
+body {
+  display:flex;
+  flex-direction: column;
+  height: 100vh;
+  
+}
+header{
+  background-color:mediumvioletred;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.rodape{
+  background-color:mediumvioletred;
+  height:64px;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.conteudo-pagina{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  gap: 24px;
+  flex-grow: 3;
+  flex-wrap: wrap;
+    
+}
+.menu-lateral{
+  max-width: 20%;
+  min-height:100vh;
+  background-color:#f2d0e0 ;
+  
+}
+
+.conteudo-filho{
+  border: 1px darkgray solid ;
+  text-align: center;
+  padding: 8px;
+  flex-grow: 3;
+  flex-wrap: wrap;
+  align-items: center;
+  /* flex-direction: row; */
+  
+  
+}
+/* .conteudo-pai{
+  flex-direction: row;} */
+
+
+#bolo{
+  max-width: 32px;
+  max-height: 32px;
+}
+
+.text-bolo{
+  display: inline;
+}
+
+.login{
+  padding: 8px
+}
+.home{
+display:flex;
+align-items: center;
+justify-content: space-between;
+}
+.casa{
+  max-width: 32px;
+  max-height: 32px;
+}
+.seta{
+  max-width: 32px;
+  max-height: 32px;
+}
+.doce{
+  max-width: 32px;
+  max-height: 32px;
+}
+.produtos{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.carro{
+  max-width: 32px;
+  max-height: 32px;
+}
+.carrinho{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.carinha{
+  max-width: 32px;
+  max-height: 32px;
+}
+.perfil{
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bolao{
+  max-width: 200px;
+  max-height: 200px;
+  
+}
