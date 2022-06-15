@@ -1,0 +1,145 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: roboto;
+  font-size: 18px;
+  text-align: center;
+  
+}
+body{
+  display: grid;
+  background-color: rgb(251, 254, 251);
+  width: 100%;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  height: 10vh;
+  width: 100%;
+  align-items: center;
+  padding: 1%;
+  background-color: rgb(203, 227, 203);
+
+  
+}
+/* footer{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
+} */
+
+
+#div1{
+  width: 285px;
+  height: 160px;
+}
+#div2{
+  width: 285px;
+  height: 160px;
+}
+#div3{
+  width: 285px;
+  height: 160px;
+}
+#div4{
+  width: 285px;
+  height: 160px;
+}
+#div5{
+  width: 285px;
+  height: 160px;
+}
+#div6{
+  width: 285px;
+  height: 160px;
+}
+#div7{
+  width: 285px;
+  height: 160px;
+}
+#div8{
+  width: 285px;
+  height: 160px;
+}
+
+main{
+  padding: 25px;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:  1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(4,minmax(286px,1fr));
+  grid-template-rows: repeat(4,minmax(286px,1fr));
+  /* align-items: stretch; */
+  }
+  footer {
+    display:block;
+    border-top: 1px solid black;
+    height: 5vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    margin:0;
+    background-color: rgb(203, 227, 203);
+    
+  }
+@media screen and (min-width: 320px) and (max-width:480px) {
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  header{
+    height:15vh;
+    max-width: 480px;
+    padding:1%;
+    position: sticky;
+    top: 0;
+
+  }
+  #input{
+    width: 100px;
+  }
+  #lupa{
+    height:24.67px;
+  }
+  footer{
+    width:100vw;
+    height:15vh;
+    display: block;
+  }
+}
+@media screen and (min-width: 481px) and (max-width:840px){
+  
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  header{
+    height:15vh;
+    max-width: 100%;
+    padding:1%;
+    position: sticky;
+    top: 0;
+
+  }
+  #input{
+    width: 100px;
+  }
+  #lupa{
+    height:24.67px;
+  }
+  footer{
+    width:100vw;
+    height:15vh;
+    display: block;
+  }
+  
+}
