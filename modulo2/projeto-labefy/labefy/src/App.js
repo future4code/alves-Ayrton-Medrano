@@ -36,39 +36,40 @@ const StyleButton = styled.button`
 
 export default class App extends React.Component {
   state = {
-    pagina: 'playlist'
+    pagina: 'home'
   }
+
   // Funções
 
-  irParaHome = e => {
-    this.setState({ pagina: 'home' })
-  }
-  irParaPlaylist = e => {
-    this.setState({ pagina: 'playlist' })
-  }
+  // irParaHome = () => {
+  //   this.setState({ pagina: 'home' })
+  // }
+  // irParaPlaylist = () => {
+  //   this.setState({ pagina: 'playlist' })
+  // }
   escolherTelaCase = () => {
     if (this.state.pagina === 'home') {
       return <App />
     } else if (this.state.pagina === 'playlist') {
       return <MinhasPlaylists />
-    } else {
-      return <App />
     }
   }
 
   render() {
     return (
-      <>
-        {this.escolherTelaCase}
+      <div>
+        {this.escolherTelaCase()}
         <Background>
           <Cabecalho />
-          <StyleButton onclick={this.irParaHome}>Home</StyleButton>
-          <StyleButton onclick={this.irParaPlaylist}>
+          <StyleButton onclick={this.setState({ pagina: 'home' })}>
+            Home
+          </StyleButton>
+          <StyleButton onclick={this.setState({ pagina: 'playlist' })}>
             Minhas Playlists
           </StyleButton>
           <h1>HOME</h1>
         </Background>
-      </>
+      </div>
     )
   }
 }
