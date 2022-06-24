@@ -3,7 +3,8 @@ import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Cabecalho from './components/Cabecalho.js'
-import Playslists from './components/MinhasPlaylists.js'
+import MinhasPlaylists from './components/MinhasPlaylists.js'
+
 //Estilização
 
 const Background = styled.div`
@@ -32,33 +33,42 @@ const StyleButton = styled.button`
   }
 `
 //Variaveis
-const home = 'home'
-const playlist = 'playlist'
 
 export default class App extends React.Component {
   state = {
-    pagina: ''
+    pagina: 'playlist'
   }
-  //Funções
+  // Funções
 
-  mudarTela = nomeTela => {
-    this.setState({ telaAtual: nomeTela })
+  irParaHome = e => {
+    this.setState({ pagina: 'home' })
+  }
+  irParaPlaylist = e => {
+    this.setState({ pagina: 'playlist' })
   }
   escolherTelaCase = () => {
-    switch (this.state.telaAtual) {
-      case 'home':
-        return <App.js />
-      default:
-        return <Playslists />
+    if (this.state.pagina === 'home') {
+      return <App />
+    } else if (this.state.pagina === 'playlist') {
+      return <MinhasPlaylists />
+    } else {
+      return <App />
     }
   }
+
   render() {
     return (
-      <Background>
-        <Cabecalho />
-        <StyleButton onclick={this.mudarTela}>Home</StyleButton>
-        <StyleButton onclick={this.mudarTela}>Minhas Playlists</StyleButton>
-      </Background>
+      <>
+        {this.escolherTelaCase}
+        <Background>
+          <Cabecalho />
+          <StyleButton onclick={this.irParaHome}>Home</StyleButton>
+          <StyleButton onclick={this.irParaPlaylist}>
+            Minhas Playlists
+          </StyleButton>
+          <h1>HOME</h1>
+        </Background>
+      </>
     )
   }
 }
