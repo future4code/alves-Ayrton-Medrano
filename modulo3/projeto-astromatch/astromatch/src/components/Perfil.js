@@ -4,6 +4,7 @@ import Styled from 'styled-components'
 import Header from '../components/Header'
 import Like from '../assets/like.png'
 import Dislike from '../assets/dislike.png'
+import TelaBotao from '../pages/TelaBotao'
 
 //Styled
 const CardPerfil = Styled.div`
@@ -17,7 +18,8 @@ const CardPerfil = Styled.div`
   color:#861405 ;
   font-family:roboto,sans-serif;
   font-size: 18px;
-`
+  background-color: white;
+  `
 const Foto = Styled.img`
 max-width:300px;
 max-height:300px;
@@ -25,21 +27,34 @@ border-radius: 10%;
 -webkit-filter: drop-shadow(5px 5px 5px #222);
   filter: drop-shadow(5px 5px 5px #222);
 `
+
 const Container = Styled.div`
 width: 100%;
+height: 100vh;
 display:flex;
 align-items: center;
 justify-content: center;
+background-color: #f9f9f9;
+opacity: 1;
+background-image:  radial-gradient(#861405 1.9500000000000002px, transparent 1.9500000000000002px), radial-gradient(#861405 1.9500000000000002px, #f9f9f9 1.9500000000000002px);
+background-size: 78px 78px;
+background-position: 0 0,39px 39px;
 `
 const StyledButton = Styled.img`
 padding-right: 40px;
 padding-left: 40px;
 cursor: pointer;
+transition: all .5s;
+
+:hover {
+  -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+ }
 
 `
 
 //Functions
-export default function Perfil() {
+export default function Perfil(props) {
   const [perfil, setPerfil] = useState({})
 
   //Get profiles
@@ -58,19 +73,7 @@ export default function Perfil() {
   useEffect(() => {
     pegarPerfil()
   }, [])
-  //Limpar matches
-  const limparMatches = () => {
-    axios
-      .put(
-        'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/ayrton-oliveira-medrano/clear'
-      )
-      .then(() => {
-        alert('Seus matches foram zerados')
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
+
   //Enviar Id
   const enviarMatches = () => {
     console.log(perfil.id)
@@ -83,7 +86,10 @@ export default function Perfil() {
         'https://us-central1-missao-newton.cloudfunctions.net/astroMatch/ayrton-oliveira-medrano/choose-person',
         match
       )
-      .then(() => {
+      .then(res => {
+        if (res.data.isMatch) {
+          alert('Temos um match!!!')
+        }
         pegarPerfil()
       })
       .catch(err => {
@@ -93,18 +99,20 @@ export default function Perfil() {
 
   return (
     <Container>
-      <CardPerfil>
-        <Header />
-
-        <Foto src={perfil.photo} alt={perfil.photo_alt} />
-        <h2>
-          {perfil.name}, {perfil.age}
-        </h2>
-        <p>{perfil.bio}</p>
-        <StyledButton src={Dislike} onClick={pegarPerfil} />
-        <StyledButton src={Like} onClick={enviarMatches} />
-        <button onClick={limparMatches}>Limpar Matches</button>
-      </CardPerfil>
+      {perfil ? (
+        <CardPerfil>
+          <Header trocandoEstado={props.trocandoEstado} />
+          <Foto src={perfil.photo} alt={perfil.photo_alt} />
+          <h2>
+            {perfil.name}, {perfil.age}
+          </h2>
+          <p>{perfil.bio}</p>
+          <StyledButton src={Dislike} onClick={pegarPerfil} />
+          <StyledButton src={Like} onClick={enviarMatches} />
+        </CardPerfil>
+      ) : (
+        <TelaBotao pegarPerfil={pegarPerfil} />
+      )}
     </Container>
   )
 }
