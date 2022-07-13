@@ -1,13 +1,15 @@
 import React from 'react'
 import Styled from 'styled-components'
-import Header from '../components/Header'
+import { useNavigate } from 'react-router-dom'
+import { goToListTrip, goToLogin } from '../routes/Coordinator'
 
 export default function Home() {
+  const navigate = useNavigate()
+
   return (
     <div>
-      <Header />
-      <ButtonTrip>Viagens</ButtonTrip>
-      <ButtonLogin>Login</ButtonLogin>
+      <ButtonTrip onClick={() => goToListTrip(navigate)}>Viagens</ButtonTrip>
+      <ButtonLogin onClick={() => goToLogin(navigate)}>Login</ButtonLogin>
     </div>
   )
 }
