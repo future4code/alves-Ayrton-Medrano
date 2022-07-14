@@ -1,12 +1,12 @@
 import React from 'react'
 import Styled from 'styled-components'
+import Labex from '../assets/background.png'
 
 export default function Header() {
   return (
     <MainContainer>
       <Titulo>
-        <h1>Labe-X</h1>
-        <h2>Sua agência de viagens</h2>
+        <img src={Labex} />
       </Titulo>
       <Hamburguer>
         <button>Menu</button>
@@ -17,13 +17,16 @@ export default function Header() {
 const MainContainer = Styled.div`
 width: 100%;
 height: 15%;
-border-bottom: 1px solid black;
 display: flex;
 justify-content: space-between;
 align-items: center;
+background-color: #092047;
+color: white;
 
 `
 const Titulo = Styled.div`
+
 `
 const Hamburguer = Styled.div`
+padding: 2%;
 `

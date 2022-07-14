@@ -10,7 +10,8 @@ export default function LoginPage() {
   const [password, setPassword] = useState()
   const navigate = useNavigate()
 
-  const login = () => {
+  const login = e => {
+    e.preventDefault()
     const body = {
       email: email,
       password: password
@@ -36,18 +37,24 @@ export default function LoginPage() {
   return (
     <div>
       <h1>Login</h1>
-      <input
-        type="email"
-        placeholder="E-mail"
-        value={email}
-        onChange={getEmail}
-      />
-      <input
-        type="password"
-        placeholder="Senha"
-        value={password}
-        onChange={getPassword}
-      />
+      <form onSubmit={login}>
+        <input
+          type="email"
+          placeholder="E-mail"
+          value={email}
+          onChange={getEmail}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          value={password}
+          onChange={getPassword}
+          required
+        />
+
+        <button>Entrar</button>
+      </form>
       <button
         onClick={() => {
           goBack(navigate)
@@ -55,7 +62,6 @@ export default function LoginPage() {
       >
         Voltar
       </button>
-      <button onClick={login}>Entrar</button>
     </div>
   )
 }

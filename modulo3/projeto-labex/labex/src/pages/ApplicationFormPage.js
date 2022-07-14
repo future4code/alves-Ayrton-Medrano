@@ -15,7 +15,8 @@ export default function ApplicationFormPage() {
   return (
     <div>
       <p>ApplicationFormPage</p>
-      <select name="Escolha uma viagem">
+
+      <select placeholder="Escolha uma viagem">
         <option>{id}</option>
       </select>
       <input type="text" placeholder="Nome" />

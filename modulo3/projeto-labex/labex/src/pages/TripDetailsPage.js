@@ -2,19 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 import { BASE_URL } from '../constants/BASE_URL'
-
-const useAuthorizedUser = () => {
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    const token = localStorage.getItem('token')
-
-    if (token === null) {
-      alert('Por favor faça login')
-      navigate('/login')
-    }
-  }, [])
-}
+import { useAuthorizedUser } from '../Hooks/useAuthorizedPage'
 
 export default function TripDetailsPage() {
   useAuthorizedUser()
