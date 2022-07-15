@@ -5,6 +5,8 @@ import axios from 'axios'
 import { BASE_URL } from '../constants/BASE_URL'
 import { goToTripDetails, goToCreateTrip } from '../routes/Coordinator'
 import { useAuthorizedUser } from '../Hooks/useAuthorizedPage'
+import Styled from 'styled-components'
+import { StyledButton } from '../components/StyledButton'
 
 export default function AdminHomePage() {
   const navigate = useNavigate()
@@ -29,15 +31,16 @@ export default function AdminHomePage() {
   }, [deletedTrip])
   const adminList = trips.map(trip => {
     return (
-      <div key={trip.id}>
-        <p>{trip.name}</p>
+      <CardContainer key={trip.id}>
+        <h2>{trip.name}</h2>
 
-        <button onClick={() => goToTripDetails(navigate, trip.id)}>
+        <StyledButton onClick={() => goToTripDetails(navigate, trip.id)}>
           Ver Detalhes
-        </button>
-        <button onClick={() => deleteTrip(trip.id)}>Excluir Viagem</button>
-        <hr />
-      </div>
+        </StyledButton>
+        <StyledButton onClick={() => deleteTrip(trip.id)}>
+          Excluir Viagem
+        </StyledButton>
+      </CardContainer>
     )
   })
   const deleteTrip = id => {
@@ -53,18 +56,28 @@ export default function AdminHomePage() {
   }
   console.log(trips)
   return (
-    <div>
+    <Container>
       <h1>Painel Administrativo</h1>
-      <button
+      <StyledButton
         onClick={() => {
           goBack(navigate)
         }}
       >
         Voltar
-      </button>
-      <button onClick={() => goToCreateTrip(navigate)}>Criar viagem</button>
-      <button>Logout</button>
+      </StyledButton>
+      <StyledButton onClick={() => goToCreateTrip(navigate)}>
+        Criar viagem
+      </StyledButton>
+      <StyledButton>Logout</StyledButton>
       {adminList}
-    </div>
+    </Container>
   )
 }
+const Container = Styled.div`
+text-align: center;
+font-size: 20px;
+`
+const CardContainer = Styled.div`
+border: 1px solid #F2B705;
+
+`

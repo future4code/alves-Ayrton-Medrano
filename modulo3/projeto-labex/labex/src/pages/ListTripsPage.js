@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../constants/BASE_URL'
 import { goBack } from '../routes/Coordinator'
 import { goToForm } from '../routes/Coordinator'
+import { StyledButton } from '../components/StyledButton'
 
 export default function Trips() {
   const [tripsList, setTripsList] = useState([])
@@ -25,35 +26,41 @@ export default function Trips() {
   }, [])
   const mapTripsList = tripsList.map(trip => {
     return (
-      <div key={trip.id}>
-        <p>{trip.name}</p>
+      <Cards key={trip.id}>
+        <h3>{trip.name}</h3>
         <p>{trip.description}</p>
         <p>{trip.planet}</p>
         <p>{trip.durationInDays}</p>
         <p>{trip.date}</p>
-        <hr />
-      </div>
+        <StyledButton
+          onClick={() => {
+            goToForm(navigate)
+          }}
+        >
+          Inscrever-se
+        </StyledButton>
+      </Cards>
     )
   })
 
-  return (
-    <div>
-      <h1>Trips</h1>
-      <button
-        onClick={() => {
-          goBack(navigate)
-        }}
-      >
-        Voltar
-      </button>
-      <button
-        onClick={() => {
-          goToForm(navigate)
-        }}
-      >
-        Inscrever-se
-      </button>
-      {mapTripsList}
-    </div>
-  )
+  return <Container>{mapTripsList}</Container>
 }
+
+const Container = Styled.div`
+display:grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+
+
+
+`
+const Cards = Styled.div`
+width:70%;
+margin:1em;
+border:solid 2px;
+padding:1em;
+background-color: rgba(0,0,0,0.5);
+p,h3{
+ color:#F2B705;
+}
+
+`

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../constants/BASE_URL'
 import { CountrySelect } from '../constants/Country'
 import { goBack } from '../routes/Coordinator'
+import Styled from 'styled-components'
 
 export default function ApplicationFormPage() {
   const navigate = useNavigate()
@@ -13,7 +14,7 @@ export default function ApplicationFormPage() {
   // }
 
   return (
-    <div>
+    <Container>
       <p>ApplicationFormPage</p>
 
       <select placeholder="Escolha uma viagem">
@@ -31,6 +32,12 @@ export default function ApplicationFormPage() {
         Voltar
       </button>
       <button>Enviar</button>
-    </div>
+    </Container>
   )
 }
+
+const Container = Styled.div`
+height: 100vh;
+width:100vw;
+background-color: #092047;
+`

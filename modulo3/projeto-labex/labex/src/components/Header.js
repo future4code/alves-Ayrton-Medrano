@@ -22,11 +22,13 @@ justify-content: space-between;
 align-items: center;
 background-color: #092047;
 color: white;
+width:100vw;
+
 
 `
 const Titulo = Styled.div`
 
 `
 const Hamburguer = Styled.div`
-padding: 2%;
+padding: 5%;
 `
