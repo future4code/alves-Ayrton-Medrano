@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { goBack } from '../routes/Coordinator'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { BASE_URL } from '../constants/BASE_URL'
-import { goToTripDetails, goToCreateTrip } from '../routes/Coordinator'
-import { useAuthorizedUser } from '../Hooks/useAuthorizedPage'
-import Styled from 'styled-components'
-import { StyledButton } from '../components/StyledButton'
+import { BASE_URL } from '../../constants/BASE_URL'
+import {
+  goToTripDetails,
+  goToCreateTrip,
+  goBack
+} from '../../routes/Coordinator'
+import { useAuthorizedUser } from '../../Hooks/useAuthorizedPage'
+import { StyledButton } from '../../components/StyledButton'
+import { CardContainer, Container } from './styled'
 
 export default function AdminHomePage() {
   const navigate = useNavigate()
@@ -73,11 +76,3 @@ export default function AdminHomePage() {
     </Container>
   )
 }
-const Container = Styled.div`
-text-align: center;
-font-size: 20px;
-`
-const CardContainer = Styled.div`
-border: 1px solid #F2B705;
-
-`

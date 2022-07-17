@@ -1,6 +1,7 @@
 import React from 'react'
 import Styled from 'styled-components'
 import Labex from '../assets/background.png'
+import Navbar from './Navbar/Navbar'
 
 export default function Header() {
   return (
@@ -9,7 +10,7 @@ export default function Header() {
         <img src={Labex} />
       </Titulo>
       <Hamburguer>
-        <button>Menu</button>
+        <Navbar />
       </Hamburguer>
     </MainContainer>
   )

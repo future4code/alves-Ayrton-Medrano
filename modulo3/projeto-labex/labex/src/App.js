@@ -1,8 +1,7 @@
 import React from 'react'
 import Router from './routes/Router'
-import Header from './components/Header'
 import Styled from 'styled-components'
-
+import Header from './components/Header'
 function App() {
   return (
     <PageContainer>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import ErrorPage from '../pages/ErrorPage'
+import ErrorPage from '../ErrorPage'
 import axios from 'axios'
-import { BASE_URL } from '../constants/BASE_URL'
-import { goBack } from '../routes/Coordinator'
+import { BASE_URL } from '../../constants/BASE_URL'
+import { goBack } from '../../routes/Coordinator'
+import { StyledButton } from '../../components/StyledButton'
+import { Input, Container, Form } from './styled'
 
 export default function LoginPage() {
   const [email, setEmail] = useState()
@@ -35,17 +37,17 @@ export default function LoginPage() {
     setPassword(e.target.value)
   }
   return (
-    <div>
+    <Container>
       <h1>Login</h1>
-      <form onSubmit={login}>
-        <input
+      <Form onSubmit={login}>
+        <Input
           type="email"
           placeholder="E-mail"
           value={email}
           onChange={getEmail}
           required
         />
-        <input
+        <Input
           type="password"
           placeholder="Senha"
           value={password}
@@ -53,15 +55,15 @@ export default function LoginPage() {
           required
         />
 
-        <button>Entrar</button>
-      </form>
-      <button
-        onClick={() => {
-          goBack(navigate)
-        }}
-      >
-        Voltar
-      </button>
-    </div>
+        <StyledButton
+          onClick={() => {
+            goBack(navigate)
+          }}
+        >
+          Voltar
+        </StyledButton>
+        <StyledButton>Entrar</StyledButton>
+      </Form>
+    </Container>
   )
 }

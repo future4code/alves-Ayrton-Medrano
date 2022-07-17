@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
-import { BASE_URL } from '../constants/BASE_URL'
-import { useAuthorizedUser } from '../Hooks/useAuthorizedPage'
+import { BASE_URL } from '../../constants/BASE_URL'
+import { useAuthorizedUser } from '../../Hooks/useAuthorizedPage'
 import Styled from 'styled-components'
-import { StyledButton } from '../components/StyledButton'
-import { goBack } from '../routes/Coordinator'
+import { StyledButton } from '../../components/StyledButton'
+import { goBack } from '../../routes/Coordinator'
 
 export default function TripDetailsPage() {
   useAuthorizedUser()
