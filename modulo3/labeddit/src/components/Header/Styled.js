@@ -14,5 +14,9 @@ line-height: 25px;
 text-align: center;
 color: #4088CB;
 background-color:transparent;
-border:none;
+border:1px solid #4088CB;
+border-radius: 16px;
+:hover {
+  border-radius: 0;
+}
 `
