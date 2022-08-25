@@ -46,10 +46,10 @@ VALUES(
 INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES(
   "002", 
-  "Adernam",
-  1000000,
-  "1998-01-24", 
-  "male"
+  "Glória Pires",
+  1200000,
+  "1963-08-23", 
+  "female"
 );
 
 -- b)Error Code: 1062. Duplicate entry '002' for key 'PRIMARY'	0.172 sec
