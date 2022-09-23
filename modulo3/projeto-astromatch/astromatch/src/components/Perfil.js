@@ -4,7 +4,7 @@ import Styled from 'styled-components'
 import Header from '../components/Header'
 import Like from '../assets/like.png'
 import Dislike from '../assets/dislike.png'
-import TelaBotao from '../pages/TelaBotao'
+import TelaBotao from '../pages/TelaBotao/TelaBotao'
 
 //Styled
 const CardPerfil = Styled.div`

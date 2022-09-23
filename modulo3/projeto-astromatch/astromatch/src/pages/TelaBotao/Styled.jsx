@@ -1,9 +1,7 @@
-import React from 'react'
-import Limpar from '../components/Limpar'
-import Header from '../components/Header'
 import Styled from 'styled-components'
+
 //Styled
-const CardPerfil = Styled.div`
+export const CardPerfil = Styled.div`
   text-align: center;
   justify-content: center;
   border: 52px solid black;
@@ -16,7 +14,7 @@ const CardPerfil = Styled.div`
   font-size: 18px;
   background-color: white;
   `
-const Container = Styled.div`
+export const Container = Styled.div`
 width: 100%;
 height: 100vh;
 display:flex;
@@ -28,17 +26,6 @@ background-image:  radial-gradient(#861405 1.9500000000000002px, transparent 1.9
 background-size: 78px 78px;
 background-position: 0 0,39px 39px;
 `
-const Espacamento = Styled.div`
+export const Espacamento = Styled.div`
 height:300px;
 `
-export default function TelaBotao(props) {
-  return (
-    <Container>
-      <CardPerfil>
-        <Header trocandoEstado={props.trocandoEstado} />
-        <Espacamento />
-        <Limpar pegarPerfil={props.pegarPerfil} />
-      </CardPerfil>
-    </Container>
-  )
-}
