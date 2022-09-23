@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import Styled from 'styled-components'
+import React, { useState } from 'react'
 import Perfil from './components/Perfil'
-import Matches from './pages/Matches'
+import Matches from './pages/Matches/Matches'
 
 function App() {
   const [tela, setTela] = useState(true)
